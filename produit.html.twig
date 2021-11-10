@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+{% block body %}
+{{ parent() }}
+<a class="btn btn-dark" href="{{path('crudProduit',{'produit_code' : 0,'statut' : 'add'})}}">ADD</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">libelle</th>
+      <th scope="col">descripion</th>
+      <th scope="col">prix unitaire</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in produit %}
+    <tr>
+        <th>{{p.getId()}}</th>
+        <td>{{p.getLibelle()}}</td>
+        <td>{{p.getDescription()}}</td>
+        <td>{{p.getPrix()}}</td>
+        <td>
+            <a href="{{path('crudProduit',{'produit_code' : p.getId(),'statut' : 'edit'})}}" class="btn btn-success">edit</a>
+            <a href="{{path('crudProduit',{'produit_code' : p.getId(),'statut' : 'delete'})}}" class="btn btn-danger">delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

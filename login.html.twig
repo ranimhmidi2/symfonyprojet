@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block body %}
+{{ parent() }}
+ <section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/5/f/c/5fc7418aa7_50167982_lenovo-legion-y540-15irh.jpg" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            {{form(form)}}
+    </div>
+    </div>
+    </div>
+</section>
+{% endblock %}
